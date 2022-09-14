@@ -1,0 +1,172 @@
+:root {
+  /* Defualt Theme */
+  --red           :#cc241d;
+  --green         :#98971a;
+  --yellow        :#d79921;
+  --blue          :#458588;
+  --purple        :#b16286;
+  --aqua          :#689d6a;
+  --orange        :#d65d0e;
+  --gray          :#928374;
+
+  /* Light Theme */
+  --light_switch_shadow: #373d4e;
+  --light_switch_icon: "🌑";
+  --light_switch_text: "dark mode?";
+
+  --light0_hard   :#f9f5d7;
+  --light0        :#fbf1c7;
+  --light0_soft   :#f2e5bc;
+  --light1        :#ebdbb2;
+  --light2        :#d5c4a1;
+  --light3        :#bdae93;
+  --light4        :#a89984;
+
+  --light_red      :#9d0006;
+  --light_green    :#79740e;
+  --light_yellow   :#b57614;
+  --light_blue     :#076678;
+  --light_purple   :#8f3f71;
+  --light_aqua     :#427b58;
+  --light_gray     :#7c6f64;
+  --light_orange   :#af3a03;
+
+  --light_invert   :0%;
+
+  /* Dark Theme */
+  --dark_switch_shadow: #fce477;
+  --dark_switch_icon: "🌕";
+  --dark_switch_text: "light mode?";
+
+  --dark0_hard    :#1d2021;
+  --dark0         :#282828;
+  --dark0_soft    :#32302f;
+  --dark1         :#3c3836;
+  --dark2         :#504945;
+  --dark3         :#665c54;
+  --dark4         :#7c6f64;
+
+  --dark_red     :#fb4934;
+  --dark_green   :#b8bb26;
+  --dark_yellow  :#fabd2f;
+  --dark_blue    :#83a598;
+  --dark_purple  :#d3869b;
+  --dark_aqua    :#8ec07c;
+  --dark_orange  :#fe8019;
+  --dark_gray    :#a89984;
+
+  --dark_invert  :100%;
+
+  /* Default Mode */
+  --switch_shadow_color: var(--light0);
+  --switch_icon: var(--dark_switch_icon);
+  --switch_text: var(--dark_switch_text);
+
+  --theme_red     :var(--dark_red);
+  --theme_green   :var(--dark_green);
+  --theme_yellow  :var(--dark_yellow);
+  --theme_blue    :var(--dark_blue);
+  --theme_purple  :var(--dark_purple);
+  --theme_aqua    :var(--dark_aqua);
+  --theme_gray    :var(--dark_gray);
+  --theme_orange  :var(--dark_orange);
+
+  --theme_bg0_hard      :var(--dark0_hard);
+  --theme_bg0           :var(--dark0);
+  --theme_bg0_soft      :var(--dark0_soft);
+  --theme_bg1           :var(--dark1);
+  --theme_bg2           :var(--dark2);
+  --theme_bg3           :var(--dark3);
+  --theme_bg4           :var(--dark4);
+
+  --theme_fg0_hard      :var(--light0_hard);
+  --theme_fg0           :var(--light0);
+  --theme_fg0_soft      :var(--light0_soft);
+  --theme_fg1           :var(--light1);
+  --theme_fg2           :var(--light2);
+  --theme_fg3           :var(--light3);
+  --theme_fg4           :var(--light4);
+
+  --theme_invert        :var(--dark_invert);
+}
+
+/* Switched mode */
+#theme_switch:checked ~ main {
+  --switch_icon: var(--light_switch_icon);
+  --switch_text: var(--light_switch_text);
+
+  --theme_red           :var(--light_red);
+  --theme_green         :var(--light_green);
+  --theme_yellow        :var(--light_yellow);
+  --theme_blue          :var(--light_blue);
+  --theme_purple        :var(--light_purple);
+  --theme_aqua          :var(--light_aqua);
+  --theme_gray          :var(--light_gray);
+  --theme_orange        :var(--light_orange);
+
+  --theme_bg0_hard      :var(--light0_hard);
+  --theme_bg0           :var(--light0);
+  --theme_bg0_soft      :var(--light0_soft);
+  --theme_bg1           :var(--light1);
+  --theme_bg2           :var(--light2);
+  --theme_bg3           :var(--light3);
+  --theme_bg4           :var(--light4);
+
+  --theme_fg0_hard      :var(--dark0_hard);
+  --theme_fg0           :var(--dark0);
+  --theme_fg0_soft      :var(--dark0_soft);
+  --theme_fg1           :var(--dark1);
+  --theme_fg2           :var(--dark2);
+  --theme_fg3           :var(--dark3);
+  --theme_fg4           :var(--dark4);
+
+  --theme_invert        :var(--light_invert);
+}
+
+.theme_switch { /* Hides the checkbox */
+  display: none;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  /* clip: rect(1px, 1px, 1px, 1px); */
+}
+
+.switch_label {
+  cursor: pointer;
+  display: flex;
+
+  position: absolute;
+  right: 3em;
+  top: 4em;
+  z-index: 1;
+
+  width: 1em;
+  height: 1em;
+}
+
+.switch_label::before {
+  content: var(--switch_icon);
+  font-size: 30px;
+  transition: text-shadow .2s;
+}
+
+.switch_label::after {
+  align-self: center;
+  color: var(--theme_fg0);
+  font-size: 28px;
+  line-height: 40px;
+  opacity: 0;
+  padding-left: 15px;
+  transition: opacity .2s;
+}
+
+.theme_switch:focus ~ main .switch_label::before,
+.switch_label:hover::before {
+  text-shadow: 0 0 15px var(--theme_fg0);
+}
+
+.theme_switch:focus ~ main .switch_label::after,
+.switch_label:hover::after {
+  opacity: 1;
+}
