@@ -5,28 +5,75 @@ input, textarea, button, select, a {
 html, body {
   margin: 0;
   padding: 0;
+
   border: 0;
   font: inherit;
   vertical-align: baseline;
 }
 
-hr {
-  color: var(--theme_fgt0_hard);
-  width: 100%;
+body {
+  font-family: monospace;
+  font-size: 1.2em;
 }
 
-footer { max-width: 1200px ; }
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+#content {
   background-color: var(--theme_bg0);
   color: var(--theme_fg0);
 
-  font-family: monospace;
-  /* font-size: 1.5em; */
+  min-width: 100vw;
+  min-height: 100vh;
+
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+hr {
+  color: var(--theme_fgt0_hard);
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header, footer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav,
+footer nav {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+  /* padding-right: 40px; */
+}
+
+main {
+  min-height: 100% ;
+
+  margin-bottom: auto;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 p {
@@ -36,18 +83,6 @@ p {
 }
 
 img {
-  width: 100%;
-  height: 100%;
-}
-
-.content {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  max-width: 900px ;
-  min-height: 100vh ;
-  padding: 1em;
   width: 100%;
   height: 100%;
 }
@@ -174,7 +209,7 @@ blockquote:after {
 
 li
 {
-  margin-top: 1em; /* IE: lack of space above a <li> when the item is inside a <p> */
+  margin-top: 0.5em; /* IE: lack of space above a <li> when the item is inside a <p> */
 }
 
 :not(blockquote) > p,
@@ -185,7 +220,7 @@ ul {
 
 .categories{
   display: flex;
-  align-items: center
+  align-items: baseline;
 }
 
 .categories h3{
@@ -212,12 +247,6 @@ ul {
   margin: 0.15em;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  /* padding-right: 40px; */
-}
-
 .bottom {
   margin-top: auto;
 }
@@ -234,9 +263,6 @@ nav {
   flex-shrink: 0;
   margin-right: 0.5em;
 }
-
-
-
 
 .small {
   display: flex;
@@ -256,25 +282,31 @@ img {
 }
 
 h1 {
+  margin-bottom: 0;
   color: var(--theme_aqua);
 }
 
 h2 {
+  margin-bottom: 0;
   color: var(--theme_purple);
 }
 
-h4 {
-  color: var(--theme_yellow);
-}
-
-h6 {
-  color: var(--theme_gray);
-}
-
 h3 {
+  margin-bottom: 0;
   color: var(--theme_orange);
 }
 
+h4 {
+  margin-bottom: 0;
+  color: var(--theme_yellow);
+}
+
 h5 {
+  margin-bottom: 0;
   color: var(--theme_green);
+}
+
+h6 {
+  margin-bottom: 0;
+  color: var(--theme_gray);
 }

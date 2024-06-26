@@ -91,7 +91,7 @@
 }
 
 /* Switched mode */
-#theme_switch:checked ~ main {
+#theme_switch:checked ~ #content {
   --switch_icon: var(--light_switch_icon);
   --switch_text: var(--light_switch_text);
 
@@ -161,12 +161,12 @@
   transition: opacity .2s;
 }
 
-.theme_switch:focus ~ main .switch_label::before,
+.theme_switch:focus ~ #content .switch_label::before,
 .switch_label:hover::before {
   text-shadow: 0 0 15px var(--theme_fg0);
 }
 
-.theme_switch:focus ~ main .switch_label::after,
+.theme_switch:focus ~ #content .switch_label::after,
 .switch_label:hover::after {
   opacity: 1;
 }
