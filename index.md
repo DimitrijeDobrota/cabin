@@ -1,8 +1,9 @@
 @filename: index.html
+@title: Dimitrije Dobrota's cabin
 @nonav
 
 
-# Dimitrije Dobrota
+# Dimitrije Dobrota's cabin
 
 ## Junior of Computer Engineering and Information Theory interested in Linux, C++ and CS
 

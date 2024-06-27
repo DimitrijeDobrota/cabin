@@ -64,6 +64,10 @@ footer nav {
   /* padding-right: 40px; */
 }
 
+.back {
+  cursor:pointer;
+}
+
 main {
   min-height: 100% ;
 
