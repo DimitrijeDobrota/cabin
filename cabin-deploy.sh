@@ -8,11 +8,11 @@ if [ "$#" -ne 2 ]; then
         exit 1
 fi
 
-src="$1"
-dst="$2"
+src="$(realpath $1)"
+dst="$(realpath $2)"
 
 pushd "$src" || exit
-find . -not -iname "*.md" -a -not -path "*.git*" -a -not -path "*.git*"| cpio -pvd "$dst"
+find . -not -iname "*.md" -a -not -path "*.git*" -a -not -path "*.git*" | cpio -pd "$dst" 2>/dev/null
 popd || exit
 
 opt=()
