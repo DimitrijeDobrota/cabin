@@ -5,7 +5,7 @@
 
 # Dimitrije Dobrota's cabin
 
-## Junior of Computer Engineering and Information Theory interested in Linux, C++ and CS
+## Senior of Computer Engineering and Information Theory
 
 ### Articles
 
