@@ -27,9 +27,7 @@ body {
   padding-bottom: 2em;
 
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: table;
   box-sizing: border-box;
 
   padding-left: 5vw;
